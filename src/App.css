@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+:root {
+  --color-1: #f7f7ff;
+  --color-2: #f9554fac;
+  --color-3: #a5be00b0;
+  --color-4: #f6b02dad;
+  --border-radius-1: 10px;
+
+  --color-background-1: #ff4d6eb9;
+  --color-background-2: #ff4d6eda;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+}
+.container_aplication {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: relative;
+}
+.container_principal {
+  width: 70%;
+  max-width: 1200px;
+  height: 550px;
+  min-height: 500px;
+  background-color: #9fa1ff65;
+  border-radius: var(--border-radius-1);
+  padding: 20px;
+  backdrop-filter: blur(5px);
+
+  display: flex;
+}
+
+/* CONTAINER DE TAREAS */
+.container_tasks {
+  width: 65%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+/* CSS DEL TITLE DE LAS TAREAS */
+.container_title_tasks {
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  flex-grow: 0;
+}
+.container_task_items{
+  flex-grow: 1;
+  overflow-y: scroll;
+  border-radius: var(--border-radius-1);
+  background: #0018453f;
+  padding: 5px 0;
+}
+.container_task_items::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.container_task_items::-webkit-scrollbar:vertical {
+  width: 4px;
+}
+.container_task_items::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.484);
+  border-radius: 10px;
+}
+
+/* CONTAINER DE INSERTAR NUEVAS TAREAS */
+
+.container_form_tasks {
+  height: 100%;
+  flex-grow: 1;
+  padding: 0 5px;
+}
+

@@ -1,0 +1,42 @@
+.container_task{
+    min-height: 70px;
+    margin: 0 5px 5px 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius-1);
+    padding: 5px 15px;
+    font-size: 1.1em;
+    color: white;
+}
+.task_text{
+    width: 100%;
+    height: 100%;    
+    display: flex;
+    align-items: center;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+.task_icon{
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+.container_task:nth-child(3n + 1){
+    background-color: var(--color-2);
+}
+.container_task:nth-child(3n + 2){
+    background-color: var(--color-3);
+}
+.container_task:nth-child(3n + 3){
+    background-color: var(--color-4);
+}
+
+/* CSS DE LA TAREA COMPLETADA */
+.container_task.completed{
+    background-color: #000814;
+    text-decoration: line-through;
+    opacity: 0.2;
+}
