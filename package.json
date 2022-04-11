@@ -1,11 +1,11 @@
 {
+  "homepage": "http://donvoid18.github.io/R-gestTareas/",
   "name": "tareas-react",
-  "homepage": "https://donvoid18.github.io/R-gestTareas",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
