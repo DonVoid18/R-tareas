@@ -4,13 +4,18 @@ import Tarea from "./Componentes/Tarea/Tarea";
 import TaskForm from "./Componentes/TaskForm/TaskForm";
 import { useState } from "react";
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const tasksLocal = JSON.parse(localStorage.getItem("ObjectTask"));
+
+  const [tasks, setTasks] = useState(tasksLocal === null ? [] : tasksLocal);
 
   const addTask = (task) => {
     if (task.text.trim()) {
+      // agregar en el localstorage
+
       task.text = task.text.trim();
       const tasksUpdated = [task, ...tasks];
       setTasks(tasksUpdated);
+      updateLocalStorage(tasksUpdated);
     } else {
       alert("El campo está vacío");
     }
@@ -19,6 +24,7 @@ function App() {
     const tasksUpdated = tasks.filter((task) => task.id !== id);
     // está quitando el objeto que tiene ese id
     setTasks(tasksUpdated);
+    updateLocalStorage(tasksUpdated);
   };
   const completedTask = (id) => {
     const tasksUpdated = tasks.map((task) => {
@@ -28,6 +34,11 @@ function App() {
       return task;
     });
     setTasks(tasksUpdated);
+    updateLocalStorage(tasksUpdated);
+  };
+
+  const updateLocalStorage = (obj) => {
+    localStorage.setItem("ObjectTask", JSON.stringify(obj));
   };
   return (
     <div className="container_aplication">
