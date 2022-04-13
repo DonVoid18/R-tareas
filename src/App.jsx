@@ -66,6 +66,9 @@ function App() {
           <TaskForm onSubmit={addTask}></TaskForm>
         </div>
       </div>
+      <div className="container_text_version">
+        Versión 1.0
+      </div>
     </div>
   );
 }

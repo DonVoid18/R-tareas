@@ -87,3 +87,10 @@ html {
   padding: 0 5px;
 }
 
+/* css del container de versiones */
+.container_text_version{
+  position: absolute;
+  right: 15px;  
+  bottom: 15px;
+  color: var(--color-1);
+}
