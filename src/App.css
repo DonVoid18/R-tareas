@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 :root {
   --color-1: #f7f7ff;
-  --color-2: #f9554fac;
-  --color-3: #a5be00b0;
-  --color-4: #f6b02dad;
+  --color-2: #ef476ecc;
+  --color-3: #ffca3ac0;
+  --color-4: #8ac926c0;
   --color-5: white;
   --border-radius-1: 10px;
 
   --color-background-1: #ff4d6eb9;
-  --color-background-2: #ff4d6eda;
+  --color-background-2: #ff580aeb;
   --color-background-3: #9fa1ff41;
   --color-background-4: #0018453f;
+  --color-background-5: #70e000be;
 }
 * {
   padding: 0;
@@ -110,11 +111,11 @@ html {
   display: flex;
 }
 .container_state_slope{
-  background-color: #e5383bb3;
+  background-color: var(--color-background-2);
   margin-left: 5px;
 }
 .container_state_filled{
-  background-color: #70e0009e;
+  background-color: var(--color-background-5);
 }
 .container_state_slope, .container_state_filled{
   font-size: 0.875rem;

@@ -56,15 +56,15 @@
   cursor: pointer;
   font-size: 1.1em;
   font-family: 'Varela Round', sans-serif;
+  background: #ffb803cb;
   
-  background: var(--color-background-1);
   color: var(--color-5);
   
   transition: .1s ease-in;
   transition: background .2s ease;
 }
 .task_button:hover{
-  background: var(--color-background-2);
+  background: #ffb803ec;
 }
 .task_button:active{
   transform: scale(.95, .95);

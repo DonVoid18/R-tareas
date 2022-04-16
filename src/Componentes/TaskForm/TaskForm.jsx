@@ -8,7 +8,6 @@ function TaskForm({ onSubmit }) {
 
   const handleChange = (evento) => {
     setInput(evento.target.value);
-    console.log(evento.target.value);
   };
 
   const handleSend = (evento) => {
