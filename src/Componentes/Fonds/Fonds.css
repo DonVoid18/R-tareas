@@ -1,0 +1,35 @@
+/* css del container de fondos */
+.container_fonds_aplication{
+    position: absolute;
+    left: 15px;  
+    bottom: 15px;
+  
+    display: flex;
+  
+    z-index: 1;
+    background-color: white;
+    padding: 7px;
+    border-radius: var(--border-radius-1);
+  }
+  .fond_item{
+    width: 27px;
+    height: 27px;
+    background-color: red;
+    display: block;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .fond_item:nth-child(1){
+    background-color: #0040c1;
+  }
+  .fond_item:nth-child(2){
+    background-color: #15141a;
+  }
+  .fond_item:nth-child(3){
+    background-color: #15141a;
+    background-image: url(../EfectoFlower/denim-daisies.gif);
+  }
+  .fond_item:last-child{
+    margin-right: 0;
+  }
