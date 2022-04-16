@@ -1,13 +1,39 @@
 import "./App.css";
 import EfectoHero from "./Componentes/EfectoHero/EfectoHero";
+import EfectCuar from "./Componentes/EfectoCuar/EfectoCuar";
+import EfectFlower from "./Componentes/EfectoFlower/EfectoFlower";
 import Tarea from "./Componentes/Tarea/Tarea";
 import TaskForm from "./Componentes/TaskForm/TaskForm";
 import { useState } from "react";
+import Fonds from "./Componentes/Fonds/Fonds";
 function App() {
   const tasksLocal = JSON.parse(localStorage.getItem("ObjectTask"));
-
+  const fondAplication = JSON.parse(localStorage.getItem("fondAplication"));
+  const [fond, setFond] = useState(
+    fondAplication === null ? (
+      <EfectoHero></EfectoHero>
+    ) : (
+      () => {
+        let fond;
+        switch (fondAplication) {
+          case "fond-1":
+            fond = <EfectoHero></EfectoHero>;
+            break;
+          case "fond-2":
+            fond = <EfectCuar></EfectCuar>;
+            break;
+          case "fond-3":
+            fond = <EfectFlower></EfectFlower>;
+            break;
+          default:
+            fond = <EfectoHero></EfectoHero>;
+            break;
+        }
+        return fond;
+      }
+    )
+  );
   const [tasks, setTasks] = useState(tasksLocal === null ? [] : tasksLocal);
-
   const addTask = (task) => {
     if (task.text.trim()) {
       // agregar en el localstorage
@@ -36,39 +62,59 @@ function App() {
     setTasks(tasksUpdated);
     updateLocalStorage(tasksUpdated);
   };
-
   const updateLocalStorage = (obj) => {
     localStorage.setItem("ObjectTask", JSON.stringify(obj));
   };
+  const tasksSlope = () => {
+    let ctr = 0;
+    tasks.map((task) => {
+      if (!task.completed) {
+        ctr++;
+      }
+    });
+    return ctr;
+  };
+  const tasksFilled = () => {
+    let ctr = 0;
+    tasks.map((task) => {
+      if (task.completed) {
+        ctr++;
+      }
+    });
+    return ctr;
+  };
 
-  const tasksSlope = () =>{
-    let ctr = 0;
-    tasks.map((task) => {
-      if(!task.completed){
-        ctr++;
-      }
-    });
-    return ctr;
-  }
-  const tasksFilled = () =>{
-    let ctr = 0;
-    tasks.map((task) => {
-      if(task.completed){
-        ctr++;
-      }
-    });
-    return ctr;
-  }
+  const changeFond = (idFont) => {
+    switch (idFont) {
+      case "fond-1":
+        setFond(<EfectoHero></EfectoHero>);
+        break;
+      case "fond-2":
+        setFond(<EfectCuar></EfectCuar>);
+        break;
+      case "fond-3":
+        setFond(<EfectFlower></EfectFlower>);
+        break;
+      default:
+        setFond(<EfectoHero></EfectoHero>);
+    }
+    localStorage.setItem("fondAplication", JSON.stringify(idFont));
+  };
   return (
     <div className="container_aplication">
-      <EfectoHero></EfectoHero>
+      {fond}
+      <Fonds changeFond={changeFond}></Fonds>
       <div className="container_principal">
         <div className="container_tasks">
           <div className="container_title_tasks">
             <span className="text_title">Tus Tareas</span>
             <div className="container_state_tasks">
-              <div className="container_state_filled">Completadas: {tasksFilled()}</div>
-              <div className="container_state_slope">Pendientes: {tasksSlope()}</div>
+              <div className="container_state_filled">
+                Completadas: {tasksFilled()}
+              </div>
+              <div className="container_state_slope">
+                Pendientes: {tasksSlope()}
+              </div>
             </div>
           </div>
           <div className="container_task_items">
@@ -89,7 +135,7 @@ function App() {
           <TaskForm onSubmit={addTask}></TaskForm>
         </div>
       </div>
-      <div className="container_text_version">Versión 1.2</div>
+      <div className="container_text_version">Versión 1.3</div>
     </div>
   );
 }
