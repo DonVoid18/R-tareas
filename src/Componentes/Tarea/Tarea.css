@@ -1,6 +1,6 @@
 .container_task{
     min-height: 70px;
-    margin: 0 5px 5px 5px;
+    margin-bottom: 5px;
 
     display: flex;
     justify-content: space-between;
@@ -9,6 +9,9 @@
     padding: 5px 15px;
     font-size: 1.1em;
     color: white;
+}
+.container_task:last-child{
+    margin-bottom: 0;
 }
 .task_text{
     width: 100%;

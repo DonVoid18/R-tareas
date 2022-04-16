@@ -40,13 +40,36 @@ function App() {
   const updateLocalStorage = (obj) => {
     localStorage.setItem("ObjectTask", JSON.stringify(obj));
   };
+
+  const tasksSlope = () =>{
+    let ctr = 0;
+    tasks.map((task) => {
+      if(!task.completed){
+        ctr++;
+      }
+    });
+    return ctr;
+  }
+  const tasksFilled = () =>{
+    let ctr = 0;
+    tasks.map((task) => {
+      if(task.completed){
+        ctr++;
+      }
+    });
+    return ctr;
+  }
   return (
     <div className="container_aplication">
       <EfectoHero></EfectoHero>
       <div className="container_principal">
         <div className="container_tasks">
           <div className="container_title_tasks">
-            <span>Tareas Pendientes</span>
+            <span className="text_title">Tus Tareas</span>
+            <div className="container_state_tasks">
+              <div className="container_state_filled">Completadas: {tasksFilled()}</div>
+              <div className="container_state_slope">Pendientes: {tasksSlope()}</div>
+            </div>
           </div>
           <div className="container_task_items">
             {/* como mostrar una lista de componentes */}
@@ -66,9 +89,7 @@ function App() {
           <TaskForm onSubmit={addTask}></TaskForm>
         </div>
       </div>
-      <div className="container_text_version">
-        Versión 1.0
-      </div>
+      <div className="container_text_version">Versión 1.0</div>
     </div>
   );
 }

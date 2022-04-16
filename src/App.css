@@ -4,10 +4,13 @@
   --color-2: #f9554fac;
   --color-3: #a5be00b0;
   --color-4: #f6b02dad;
+  --color-5: white;
   --border-radius-1: 10px;
 
   --color-background-1: #ff4d6eb9;
   --color-background-2: #ff4d6eda;
+  --color-background-3: #9fa1ff41;
+  --color-background-4: #0018453f;
 }
 * {
   padding: 0;
@@ -32,9 +35,9 @@ html {
 .container_principal {
   width: 70%;
   max-width: 1200px;
-  height: 550px;
+  height: 520px;
   min-height: 500px;
-  background-color: #9fa1ff65;
+  background-color: var(--color-background-3);
   border-radius: var(--border-radius-1);
   padding: 20px;
   backdrop-filter: blur(5px);
@@ -52,20 +55,27 @@ html {
 }
 /* CSS DEL TITLE DE LAS TAREAS */
 .container_title_tasks {
-  text-align: center;
-  margin-bottom: 15px;
-  color: white;
-  font-size: 1.3rem;
+  color: var(--color-5);
+  font-size: 1.3em;
   text-transform: uppercase;
   font-weight: bold;
   flex-grow: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.text_title{
+  margin-bottom: 10px;
 }
 .container_task_items{
   flex-grow: 1;
   overflow-y: scroll;
+  background-color: var(--color-background-4);
+  padding: 7px;
   border-radius: var(--border-radius-1);
-  background: #0018453f;
-  padding: 5px 0;
+  border-top-right-radius: 0;
 }
 .container_task_items::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -84,7 +94,7 @@ html {
 .container_form_tasks {
   height: 100%;
   flex-grow: 1;
-  padding: 0 5px;
+  margin-left: 7px;
 }
 
 /* css del container de versiones */
@@ -94,3 +104,21 @@ html {
   bottom: 15px;
   color: var(--color-1);
 }
+
+/* css de los container de stado de las tareas */
+.container_state_tasks{
+  display: flex;
+}
+.container_state_slope{
+  background-color: #e5383bb3;
+  margin-left: 5px;
+}
+.container_state_filled{
+  background-color: #70e0009e;
+}
+.container_state_slope, .container_state_filled{
+  font-size: 0.875rem;
+  padding: 10px;
+  border-top-left-radius: var(--border-radius-1);
+  border-top-right-radius: var(--border-radius-1);
+} 

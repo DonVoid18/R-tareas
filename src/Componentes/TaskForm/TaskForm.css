@@ -2,27 +2,28 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .container_title_form {
   flex-grow: 0;
   text-align: center;
-  margin-bottom: 15px;
-  color: white;
+  color: var(--color-5);
   font-size: 1.3rem;
   text-transform: uppercase;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .textArea_task {
-  font-family: 'Varela Round', sans-serif;
-  flex-grow: 5;
   width: 100%;
+  flex-grow: 1;
+  font-family: 'Varela Round', sans-serif;
   outline: none;
   border: none;
   resize: none;
   font-size: 1.1em;
   border-radius: var(--border-radius-1);
-  padding: 10px;
-  background: #0018453f;
+  padding: 15px;
+  background-color: var(--color-background-4);
 
   color: #edede9;
   overflow-y: scroll;
@@ -41,19 +42,24 @@
 .textArea_task::placeholder {
   color: #edede95c;
 }
-.task_button {
-  font-family: 'Varela Round', sans-serif;
-  flex-grow: 0;
-  height: 50px;
-  padding: 10px;
+.container_buttons_task_form{
   margin-top: 5px;
+  height: 50px;
+  display: flex;
+}
+.task_button {
+  flex-grow: 1;
+  padding: 10px;
   border-radius: var(--border-radius-1);
   border: none;
   outline: none;
   cursor: pointer;
   font-size: 1.1em;
+  font-family: 'Varela Round', sans-serif;
+  
   background: var(--color-background-1);
-  color: white;
+  color: var(--color-5);
+  
   transition: .1s ease-in;
   transition: background .2s ease;
 }
@@ -62,4 +68,28 @@
 }
 .task_button:active{
   transform: scale(.95, .95);
+}
+/* css de boton de emojis */
+.container_icon_button{
+  margin-left: 5px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0018453f;
+  border-radius: var(--border-radius-1);
+}
+.icon_item_button{
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5625rem;
+  transition: .3s ease;
+  user-select: none;
+}
+.icon_item_button:hover{
+  background-color: #edede922;
 }
