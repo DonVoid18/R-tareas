@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./src/favicon/logo.png" alt="Logo" title="Logo" width="100px">
+  <img src="./src/favicon/newLogo.png" alt="Logo" title="Logo" width="100px">
 </div>
 <h1 align="center">
   Tareas Moppy
