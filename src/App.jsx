@@ -2,6 +2,7 @@ import "./App.css";
 import EfectoHero from "./Componentes/EfectoHero/EfectoHero";
 import EfectCuar from "./Componentes/EfectoCuar/EfectoCuar";
 import EfectFlower from "./Componentes/EfectoFlower/EfectoFlower";
+import EfectoFlow2 from "./Componentes/EfectoFlow2/EfectoFlow2";
 import Tarea from "./Componentes/Tarea/Tarea";
 import TaskForm from "./Componentes/TaskForm/TaskForm";
 import { useState } from "react";
@@ -24,6 +25,9 @@ function App() {
             break;
           case "fond-3":
             fond = <EfectFlower></EfectFlower>;
+            break;
+          case "fond-4":
+            fond = <EfectoFlow2></EfectoFlow2>;
             break;
           default:
             fond = <EfectoHero></EfectoHero>;
@@ -65,6 +69,7 @@ function App() {
   const updateLocalStorage = (obj) => {
     localStorage.setItem("ObjectTask", JSON.stringify(obj));
   };
+  //
   const tasksSlope = () => {
     let ctr = 0;
     tasks.map((task) => {
@@ -72,6 +77,7 @@ function App() {
         ctr++;
       }
     });
+    document.title = ctr === 0 ? "Tareas Moppy" : `(${ctr}) Tareas Moppy`;
     return ctr;
   };
   const tasksFilled = () => {
@@ -94,6 +100,9 @@ function App() {
         break;
       case "fond-3":
         setFond(<EfectFlower></EfectFlower>);
+        break;
+      case "fond-4":
+        setFond(<EfectoFlow2></EfectoFlow2>);
         break;
       default:
         setFond(<EfectoHero></EfectoHero>);

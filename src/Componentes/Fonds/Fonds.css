@@ -1,24 +1,24 @@
 /* css del container de fondos */
 .container_fonds_aplication{
     position: absolute;
-    left: 15px;  
-    bottom: 15px;
+    left: 0.9375rem;  
+    bottom: 0.9375rem;
   
     display: flex;
   
     z-index: 1;
     background-color: white;
-    padding: 7px;
+    padding: 0.4375rem;
     border-radius: var(--border-radius-1);
   }
   .fond_item{
-    width: 27px;
-    height: 27px;
+    width: 1.6875rem;
+    height: 1.6875rem;
     background-color: red;
     display: block;
-    margin-right: 5px;
+    margin-right: 0.3125rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
   }
   .fond_item:nth-child(1){
     background-color: #0040c1;
@@ -27,8 +27,10 @@
     background-color: #15141a;
   }
   .fond_item:nth-child(3){
-    background-color: #15141a;
     background-image: url(../EfectoFlower/denim-daisies.gif);
+  }
+  .fond_item:nth-child(4){
+    background-image: url(../EfectoFlow2/the-night.png);
   }
   .fond_item:last-child{
     margin-right: 0;

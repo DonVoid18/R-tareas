@@ -1,12 +1,12 @@
 .container_task{
-    min-height: 70px;
-    margin-bottom: 5px;
+    min-height: 4.375rem;
+    margin-bottom: 0.3125rem;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: var(--border-radius-1);
-    padding: 5px 15px;
+    padding: 0.3125rem 0.9375rem;
     font-size: 1.1em;
     color: white;
 }
@@ -22,9 +22,9 @@
     cursor: pointer;
 }
 .task_icon{
-    width: 15px;
-    height: 15px;
-    margin: 5px;
+    width: 0.9375rem;
+    height: 0.9375rem;
+    margin: 0.3125rem;
     cursor: pointer;
 }
 .container_task:nth-child(3n + 1){

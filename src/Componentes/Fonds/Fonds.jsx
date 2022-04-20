@@ -5,6 +5,7 @@ function Fonds({ changeFond }) {
       <span className="fond_item" onClick={()=>changeFond("fond-1")}></span>
       <span className="fond_item" onClick={()=>changeFond("fond-2")}></span>
       <span className="fond_item" onClick={()=>changeFond("fond-3")}></span>
+      <span className="fond_item" onClick={()=>changeFond("fond-4")}></span>
     </div>
   );
 }
