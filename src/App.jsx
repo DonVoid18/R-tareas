@@ -144,7 +144,7 @@ function App() {
           <TaskForm onSubmit={addTask}></TaskForm>
         </div>
       </div>
-      <div className="container_text_version">Versión 1.3</div>
+      <div className="container_text_version">Versión 1.4</div>
     </div>
   );
 }
