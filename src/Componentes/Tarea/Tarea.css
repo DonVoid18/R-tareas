@@ -1,45 +1,67 @@
-.container_task{
-    min-height: 4.375rem;
-    margin-bottom: 0.3125rem;
+.container_task {
+  min-height: 4.375rem;
+  margin-bottom: 0.3125rem;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: var(--border-radius-1);
-    padding: 0.3125rem 0.9375rem;
-    font-size: 1.1em;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius-1);
+  padding: 0.3125rem 0.9375rem;
+  font-size: 1.1em;
+  color: white;
 }
-.container_task:last-child{
-    margin-bottom: 0;
+.container_task:last-child {
+  margin-bottom: 0;
 }
-.task_text{
-    width: 100%;
-    height: 100%;    
-    display: flex;
-    align-items: center;
-    overflow-wrap: anywhere;
-    cursor: pointer;
+.task_text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+  padding: 2px 5px;
 }
-.task_icon{
-    width: 0.9375rem;
-    height: 0.9375rem;
-    margin: 0.3125rem;
-    cursor: pointer;
+.task_text:focus {
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--color-background-4);
 }
-.container_task:nth-child(3n + 1){
-    background-color: var(--color-2);
+.task_icon {
+  width: 25px;
+  height: 25px;
+  font-size: 1.125rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 2px;
+  transition: 0.3s ease;
+  user-select: none;
 }
-.container_task:nth-child(3n + 2){
-    background-color: var(--color-3);
+.task_icon:hover{
+    background-color: #edede922;
 }
-.container_task:nth-child(3n + 3){
-    background-color: var(--color-4);
+.container_task:nth-child(3n + 1) {
+  background-color: var(--color-2);
+}
+.container_task:nth-child(3n + 2) {
+  background-color: var(--color-3);
+}
+.container_task:nth-child(3n + 3) {
+  background-color: var(--color-4);
+}
+.container_task:nth-child(3n + 4) {
+  background-color: var(--color-container_task-1);
+}
+.container_task:nth-child(3n + 5) {
+  background-color: var(--color-container_task-2);
 }
 
 /* CSS DE LA TAREA COMPLETADA */
-.container_task.completed{
-    background-color: #000814;
-    text-decoration: line-through;
-    opacity: 0.2;
+.container_task.completed {
+  background-color: #000814;
+  text-decoration: line-through;
+  opacity: 0.2;
 }

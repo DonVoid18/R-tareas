@@ -66,6 +66,16 @@ function App() {
     setTasks(tasksUpdated);
     updateLocalStorage(tasksUpdated);
   };
+  const editTask = (id, newTextTask) =>{
+    const tasksUpdated = tasks.map((task) => {
+      if (task.id === id) {
+        task.text = newTextTask;
+      }
+      return task;
+    });
+    setTasks(tasksUpdated);
+    updateLocalStorage(tasksUpdated);
+  }
   const updateLocalStorage = (obj) => {
     localStorage.setItem("ObjectTask", JSON.stringify(obj));
   };
@@ -89,7 +99,7 @@ function App() {
     });
     return ctr;
   };
-
+  
   const changeFond = (idFont) => {
     switch (idFont) {
       case "fond-1":
@@ -136,6 +146,7 @@ function App() {
                 completed={task.completed}
                 completedTask={completedTask}
                 deleteTask={deleteTask}
+                editTask={editTask}
               />
             ))}
           </div>
@@ -144,7 +155,7 @@ function App() {
           <TaskForm onSubmit={addTask}></TaskForm>
         </div>
       </div>
-      <div className="container_text_version">Versión 1.4</div>
+      <div className="container_text_version">Versión 1.5</div>
     </div>
   );
 }
