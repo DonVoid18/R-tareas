@@ -27,10 +27,16 @@
     background-color: #15141a;
   }
   .fond_item:nth-child(3){
-    background-image: url(../EfectoFlower/denim-daisies.gif);
+    background-image: url(../ThemeAplication/imagesTexturas/denim-daisies.gif);
   }
   .fond_item:nth-child(4){
-    background-image: url(../EfectoFlow2/the-night.png);
+    background-image: url(../ThemeAplication/imagesTexturas/the-night.png);
+  }
+  .fond_item:nth-child(5){
+    background-image: url(../ThemeAplication/imagesTexturas/rampage.gif);
+  }
+  .fond_item:nth-child(6){
+    background-image: url(../ThemeAplication/imagesTexturas/dinos.png);
   }
   .fond_item:last-child{
     margin-right: 0;

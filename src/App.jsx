@@ -1,12 +1,16 @@
 import "./App.css";
-import EfectoHero from "./Componentes/EfectoHero/EfectoHero";
-import EfectCuar from "./Componentes/EfectoCuar/EfectoCuar";
-import EfectFlower from "./Componentes/EfectoFlower/EfectoFlower";
-import EfectoFlow2 from "./Componentes/EfectoFlow2/EfectoFlow2";
 import Tarea from "./Componentes/Tarea/Tarea";
 import TaskForm from "./Componentes/TaskForm/TaskForm";
 import { useState } from "react";
 import Fonds from "./Componentes/Fonds/Fonds";
+import {
+  EfectoHero,
+  EfectCuar,
+  EfectFlower,
+  EfectoFlow2,
+  EfectoRos,
+  EfectoDino,
+} from "./Componentes/ThemeAplication/ThemeAplication";
 function App() {
   const tasksLocal = JSON.parse(localStorage.getItem("ObjectTask"));
   const fondAplication = JSON.parse(localStorage.getItem("fondAplication"));
@@ -28,6 +32,12 @@ function App() {
             break;
           case "fond-4":
             fond = <EfectoFlow2></EfectoFlow2>;
+            break;
+          case "fond-5":
+            fond = <EfectoRos></EfectoRos>;
+            break;
+          case "fond-6":
+            fond = <EfectoDino></EfectoDino>;
             break;
           default:
             fond = <EfectoHero></EfectoHero>;
@@ -66,7 +76,7 @@ function App() {
     setTasks(tasksUpdated);
     updateLocalStorage(tasksUpdated);
   };
-  const editTask = (id, newTextTask) =>{
+  const editTask = (id, newTextTask) => {
     const tasksUpdated = tasks.map((task) => {
       if (task.id === id) {
         task.text = newTextTask;
@@ -75,7 +85,7 @@ function App() {
     });
     setTasks(tasksUpdated);
     updateLocalStorage(tasksUpdated);
-  }
+  };
   const updateLocalStorage = (obj) => {
     localStorage.setItem("ObjectTask", JSON.stringify(obj));
   };
@@ -99,7 +109,7 @@ function App() {
     });
     return ctr;
   };
-  
+
   const changeFond = (idFont) => {
     switch (idFont) {
       case "fond-1":
@@ -113,6 +123,12 @@ function App() {
         break;
       case "fond-4":
         setFond(<EfectoFlow2></EfectoFlow2>);
+        break;
+      case "fond-5":
+        setFond(<EfectoRos></EfectoRos>);
+        break;
+      case "fond-6":
+        setFond(<EfectoDino></EfectoDino>);
         break;
       default:
         setFond(<EfectoHero></EfectoHero>);
